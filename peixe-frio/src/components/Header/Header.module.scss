@@ -7,6 +7,7 @@
     justify-content: start;
     align-items: center;
     padding-left: 1.4em;
+    margin-bottom: 2em;
 
 }
 
@@ -14,6 +15,7 @@
     height: 60px;
     width: 60px;
     margin-right: 2em;
+
 }
 
 .menu {
@@ -21,10 +23,10 @@
     width: 30px;
     margin-right: 3em;
     cursor: pointer;
-}
 
-.menu:hover {
-    scale: 1.1;
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .search {
@@ -62,10 +64,10 @@
     height: 30px;
     width: 30px;
     margin-right: 0.5em;
-}
 
-.user_img:hover {
-    scale: 1.1;
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .cart_container {
@@ -88,8 +90,8 @@
     height: 30px;
     width: 30px;
     margin-right: 0.5em;
-}
 
-.cart_img:hover {
-    scale: 1.1;
+    &:hover {
+        transform: scale(1.1);
+    }
 }

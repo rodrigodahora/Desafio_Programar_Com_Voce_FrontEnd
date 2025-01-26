@@ -1,0 +1,48 @@
+.prices {
+    display: flex;
+    flex-direction: column;
+    width: 6em;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    gap: 5px;
+
+
+    h3 {
+
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 26px;
+        color: rgb(0, 174, 255);
+
+    }
+
+    h4 {
+        align-self: center;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+
+}
+
+
+.installments {
+    display: flex;
+    align-items: center;
+
+    width: 200px;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    color: black;
+
+
+    span {
+
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+
+
+    }
+}
