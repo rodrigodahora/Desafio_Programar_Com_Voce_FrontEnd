@@ -12,7 +12,7 @@ function Modal({ open, handleClose }: IProps) {
             {open && (
                 <div className={styles.container}>
                     <div className={styles.modal}>
-                        <img src="./close_img.png" alt="close" className={styles.close} />
+                        <img src="./close_img.png" alt="close" className={styles.close} onClick={handleClose} />
                         <div className={styles['modal_body']}>
                             <img className={styles["product_img"]} src="https://static.wixstatic.com/media/d11da1_7a7d5efd3c414020889f796b63b787ba~mv2.jpg/v1/fill/w_980,h_980,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/d11da1_7a7d5efd3c414020889f796b63b787ba~mv2.jpg" alt="Product" />
                         </div>

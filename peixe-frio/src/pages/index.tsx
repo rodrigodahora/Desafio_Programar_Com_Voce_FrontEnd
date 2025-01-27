@@ -27,7 +27,7 @@ export default function Home() {
             <Side />
           </div>
           <div className={styles.product_container}>
-            <Product handleSelectProduc={handleSelectProduct} />
+            <Product handleSelectProduct={hendleSelectProduct} />
 
           </div>
         </div>
