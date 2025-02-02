@@ -24,7 +24,7 @@ function Modal({ open, handleClose, product }: IProps) {
                         </div>
                         <div className={styles['container_buy']}>
                             <button className="button_buy">Adicionar</button>
-                            <h3>R$ {product.currentPrice}</h3>
+                            <h3>R$ {product.price}</h3>
 
                         </div>
 

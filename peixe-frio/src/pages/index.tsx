@@ -7,17 +7,17 @@ import { useState } from "react";
 import { ProductType } from "@/types/ProductType";
 
 interface IProps {
-  shoes: ProductType[]
+  items: ProductType[]
 }
 
-export default function Home({ shoes }: IProps) {
+export default function Home({ items }: IProps) {
   const [open, setOpen] = useState(false);
   const [currentProduct, setCurrentProduct] = useState<ProductType>({
     id: 0,
     name: '',
-    image: '',
     description: '',
-    currentPrice: 0
+    price: 0,
+    image: 'string',
   });
 
   function hendleSelectProduct(product: ProductType): void {
@@ -38,8 +38,8 @@ export default function Home({ shoes }: IProps) {
             <Side />
           </div>
           <div className={styles.product_container}>
-            {shoes.map((shoe) => (
-              <Product handleSelectProduct={hendleSelectProduct} key={shoe.id} product={shoe} />
+            {items.map((item) => (
+              <Product handleSelectProduct={hendleSelectProduct} key={item.id} item={item} />
             ))}
           </div>
         </div>
@@ -51,12 +51,15 @@ export default function Home({ shoes }: IProps) {
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch("https://api-contacts.pedagogico.cubos.academy/shoes");
+  const response = await fetch("http://localhost:8080/products");
   const data = await response.json()
+
+  const items = Array.isArray(data.items) ? [...data.items] : [];
+
 
   return {
     props: {
-      shoes: [...data]
+      items
     }
   };
 };
