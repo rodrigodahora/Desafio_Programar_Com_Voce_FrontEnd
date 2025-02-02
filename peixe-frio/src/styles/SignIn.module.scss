@@ -1,0 +1,53 @@
+.container_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+    gap: 10px;
+
+    .logo {
+        width: 5em;
+        height: 5em;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 26px;
+        color: rgb(0, 174, 255);
+    }
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    height: 15em;
+
+    input {
+        height: 3em;
+        border-radius: 8px;
+        border: none;
+        background-color: rgb(216, 216, 216);
+        margin-bottom: 1.8em;
+        padding-left: 1em;
+    }
+
+    .link {
+        margin-left: 1em;
+        margin-top: -1em;
+        text-decoration: none;
+        color: rgb(0, 174, 255);
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 26px;
+    }
+
+    button {
+        margin-top: 1.5em;
+    }
+
+}
