@@ -1,8 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useEffect } from "react";
 import styles from "./Header.module.scss";
 import Link from "next/link";
+import { useCartStore } from "@/store";
+import Cart from "../Cart/Cart";
 
 function Header() {
+    const useStore = useCartStore();
+
     const [userName, setUserName] = useState<string | null>(null);
 
     useEffect(() => {
@@ -31,10 +36,7 @@ function Header() {
                 <img className={styles.user_img} src="/user.png" alt="user" />
                 <p>{userName ? `Bem vindo ${userName} ` : "Bem vindo, Acesse seu perfil"}</p>
             </div>
-            <div className={styles.cart_container} onClick={handleCartClick}>
-                <img className={styles.cart_img} src="/cart.png" alt="user" />
-                <p>Carrinho</p>
-            </div>
+            <Cart />
 
         </header>
     )

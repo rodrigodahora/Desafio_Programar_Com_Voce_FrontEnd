@@ -1,0 +1,48 @@
+.cart_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    width: 180px;
+    margin-left: 1em;
+    margin-right: 3em;
+
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cart_img {
+    margin-left: 5px;
+    height: 30px;
+    width: 30px;
+    margin-right: 0.5em;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.container_cart {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(192, 192, 192, 0.404);
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+}
+
+.carrinho {
+    position: absolute;
+    background: rgb(133, 150, 167);
+    right: 0;
+    top: 0;
+    width: 22%;
+    height: 100%;
+    padding: 12px;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
