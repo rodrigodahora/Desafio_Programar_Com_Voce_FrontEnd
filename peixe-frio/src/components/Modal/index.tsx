@@ -1,6 +1,7 @@
 import { ProductType } from "@/types/ProductType";
 import styles from "./Modal.module.scss"
 import "@/styles/Buttons.scss"
+import AddCart from "../Cart/AddCart";
 
 interface IProps {
     product: ProductType;
@@ -23,7 +24,7 @@ function Modal({ open, handleClose, product }: IProps) {
                             <p>{product.description}</p>
                         </div>
                         <div className={styles['container_buy']}>
-                            <button className="button_buy">Adicionar</button>
+                            <AddCart product={product} />
                             <h3>R$ {product.price}</h3>
 
                         </div>
