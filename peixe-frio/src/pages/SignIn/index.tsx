@@ -26,6 +26,7 @@ export default function SignIn() {
             const data = await response.json();
 
             if (response.ok) {
+                localStorage.setItem("token", data.token);
                 localStorage.setItem("userName", data.name);
                 router.push("/");
             } else {

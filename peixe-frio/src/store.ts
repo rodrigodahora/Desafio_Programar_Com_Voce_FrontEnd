@@ -2,14 +2,15 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { ProductType } from "@/types/ProductType";
-import { getStaticProps } from "@/pages/index";
 
 
 type CartState = {
     cart: ProductType[];
+    totalAmount: number;
     addProduct: (product: ProductType) => void;
     removeProduct: (product: ProductType) => void;
     deleteProduct: (product: ProductType) => void;
+    clearCart: () => void;
     isOpen: boolean;
     toggleCart: () => void;
 
@@ -19,43 +20,77 @@ export const useCartStore = create<CartState>()(
     persist(
         (set) => ({
             cart: [],
+            totalAmount: 0,
             addProduct: (product) =>
                 set((state) => {
                     const existingProduct = state.cart.find((p) => p.id === product.id);
+
                     if (existingProduct) {
                         const updatedCart = state.cart.map((p) => {
                             if (p.id === product.id) {
-                                return { ...p, quantity: p.quantity ? p.quantity + 1 : 1 }
+                                return { ...p, quantity: p.quantity ? p.quantity + 1 : 1 };
                             }
                             return p;
                         });
-                        return { cart: updatedCart };
+
+                        const newTotalAmount = updatedCart.reduce(
+                            (total, p) => total + p.price * p.quantity!,
+                            0
+                        );
+
+                        return { cart: updatedCart, totalAmount: newTotalAmount };
                     } else {
-                        return { cart: [...state.cart, { ...product, quantity: 1 }] };
+                        const updatedCart = [...state.cart, { ...product, quantity: 1 }];
+                        const newTotalAmount = updatedCart.reduce(
+                            (total, p) => total + p.price * p.quantity!,
+                            0
+                        );
+                        return { cart: updatedCart, totalAmount: newTotalAmount };
                     }
                 }),
             removeProduct: (product) =>
                 set((state) => {
                     const existingProduct = state.cart.find((p) => p.id === product.id);
+
                     if (existingProduct && existingProduct.quantity! > 1) {
                         const updatedCart = state.cart.map((p) => {
                             if (p.id === product.id) {
                                 return { ...p, quantity: p.quantity! - 1 };
                             }
-                            return p
+                            return p;
                         });
-                        return { cart: updatedCart };
+
+                        const newTotalAmount = updatedCart.reduce(
+                            (total, p) => total + p.price * p.quantity!,
+                            0
+                        );
+                        return { cart: updatedCart, totalAmount: newTotalAmount };
+
                     } else {
                         const filteredCart = state.cart.filter((p) => p.id !== product.id);
-                        return { cart: filteredCart };
+
+                        const newTotalAmount = filteredCart.reduce(
+                            (total, p) => total + p.price * p.quantity!,
+                            0
+                        );
+                        return { cart: filteredCart, totalAmount: newTotalAmount };
                     }
                 }),
             deleteProduct: (product) =>
                 set((state) => {
-                    // Filtra o produto com o id igual ao passado, removendo-o completamente
                     const filteredCart = state.cart.filter((p) => p.id !== product.id);
-                    return { cart: filteredCart };
+
+                    const newTotalAmount = filteredCart.reduce(
+                        (total, p) => total + p.price * p.quantity!,
+                        0
+                    );
+                    return { cart: filteredCart, totalAmount: newTotalAmount };
                 }),
+            clearCart: () =>
+                set(() => ({
+                    cart: [],
+                    totalAmount: 0
+                })),
             isOpen: false,
             toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
         }), { name: "cart-storage" })

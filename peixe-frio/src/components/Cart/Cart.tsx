@@ -3,6 +3,7 @@
 import { useCartStore } from "@/store";
 import styles from "@/components/Cart/Cart.module.scss";
 import Image from "next/image";
+import CartSummary from "./CartSummary";
 
 export default function Cart() {
     const useStore = useCartStore();
@@ -41,9 +42,12 @@ export default function Cart() {
                                             <button onClick={() => useStore.removeProduct(item)}>-</button>
                                         </div>
 
+
                                     </div>
                                 ))
                             }
+
+                            {useStore.cart.length > 0 && <CartSummary />}
                         </div>
                     </div>
                 )
