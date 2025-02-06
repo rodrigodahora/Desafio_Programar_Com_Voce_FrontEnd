@@ -1,5 +1,4 @@
 import styles from "./Product.module.scss"
-import "@/styles/Custom-classes.scss";
 import { ProductType } from "@/types/ProductType";
 
 interface IProps {
@@ -21,7 +20,7 @@ function Product({ handleSelectProduct, item }: IProps) {
                     <span>1KG</span>
                 </div>
 
-                <h3>R$ {item.price}</h3>
+                <h3>R$ {item.price.toFixed(2)}</h3>
             </div>
 
         </div>
