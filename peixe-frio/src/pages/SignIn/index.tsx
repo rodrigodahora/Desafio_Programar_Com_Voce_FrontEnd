@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import styles from "@/styles/SignIn.module.scss";
-import "@/styles/Buttons.scss"
+import "../../styles/Buttons.scss";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";

@@ -1,5 +1,5 @@
 import styles from "./SignUp.module.scss";
-import "@/styles/Buttons.scss";
+import "../../styles/Buttons.scss";
 import Link from "next/link";
 import { useState } from "react";
 
