@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useCartStore } from "@/store";
 import Cart from "../Cart/Cart";
 
-function Header() {
+const Header = () => {
     const useStore = useCartStore();
 
     const [userName, setUserName] = useState<string | null>(null);
