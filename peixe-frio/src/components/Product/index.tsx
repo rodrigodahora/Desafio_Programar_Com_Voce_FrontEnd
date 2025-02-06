@@ -1,5 +1,5 @@
 import styles from "./Product.module.scss"
-import "../../styles/Custom-classes.scss";
+import "@/styles/Custom-classes.scss";
 import { ProductType } from "@/types/ProductType";
 
 interface IProps {
