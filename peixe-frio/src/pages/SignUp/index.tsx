@@ -1,5 +1,4 @@
 import styles from "./SignUp.module.scss";
-import "../../styles/Buttons.scss";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -57,8 +56,8 @@ export default function SignUp() {
                 <input placeholder="Senha" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 {message && <p className={styles.message}>{message}</p>}
                 <div className={styles.button_container}>
-                    <button className="button_buy">Cadastrar</button>
-                    <Link className={styles["link"]} href="/"><button className="cancel_button">Cancelar</button></Link>
+                    <button className={styles.button_buy}>Cadastrar</button>
+                    <Link className={styles["link"]} href="/"><button className={styles.cancel_button}>Cancelar</button></Link>
 
                 </div>
 

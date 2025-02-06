@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import styles from "@/styles/SignIn.module.scss";
-import "../../styles/Buttons.scss";
+import styles from "@/pages/SignIn/SignIn.module.scss";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -51,7 +50,7 @@ export default function SignIn() {
                 <input placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                 <input placeholder="Senha" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                 <Link className={styles["link"]} href="/SignUp">Registre-se</Link>
-                <button className="button_buy">Entrar</button>
+                <button className={styles.button_buy}>Entrar</button>
 
             </form>
 

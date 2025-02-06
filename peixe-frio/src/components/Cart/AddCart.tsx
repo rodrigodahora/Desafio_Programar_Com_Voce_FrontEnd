@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useCartStore } from "@/store";
 import { ProductType } from "@/types/ProductType";
-import "../../styles/Buttons.scss";
+import styles from "@/components/Cart/Cart.module.scss";
 
 export default function AddCart({ product }: { product: ProductType }) {
     const { addProduct } = useCartStore();
@@ -9,6 +9,6 @@ export default function AddCart({ product }: { product: ProductType }) {
     return (
         <button
             onClick={() => addProduct(product)}
-            className="button_buy">Adicionar</button>
+            className={styles.button_buy}>Adicionar</button>
     )
 }
