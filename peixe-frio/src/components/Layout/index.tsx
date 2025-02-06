@@ -1,6 +1,6 @@
-import styles from "./Layout.module.scss";
-import Header from "../Header";
-import Footer from "../Footer"
+import styles from "@/components/Layout/Layout.module.scss";
+import Header from "../Header/index";
+import Footer from "../Footer/index"
 import { JSX } from "react";
 
 interface IProps {

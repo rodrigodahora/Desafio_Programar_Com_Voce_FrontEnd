@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useEffect } from "react";
-import styles from "./Header.module.scss";
+import styles from "@/components/Header/Header.module.scss";
 import Link from "next/link";
 import { useCartStore } from "@/store";
 import Cart from "../Cart/Cart";

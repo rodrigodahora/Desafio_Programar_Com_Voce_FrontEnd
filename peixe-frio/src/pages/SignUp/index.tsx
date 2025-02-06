@@ -1,4 +1,4 @@
-import styles from "./SignUp.module.scss";
+import styles from "@/pages/SignUp/SignUp.module.scss";
 import Link from "next/link";
 import { useState } from "react";
 

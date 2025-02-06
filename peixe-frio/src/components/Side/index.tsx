@@ -1,4 +1,4 @@
-import styles from "./Side.module.scss"
+import styles from "@/components/Side/Side.module.scss";
 
 function Side() {
     return (

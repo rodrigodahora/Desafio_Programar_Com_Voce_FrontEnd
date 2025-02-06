@@ -1,5 +1,5 @@
 import { ProductType } from "@/types/ProductType";
-import styles from "./Modal.module.scss"
+import styles from "@/components/Modal/Modal.module.scss";
 import AddCart from "../Cart/AddCart";
 
 interface IProps {

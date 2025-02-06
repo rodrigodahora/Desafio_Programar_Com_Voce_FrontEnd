@@ -1,4 +1,4 @@
-import styles from "./Product.module.scss"
+import styles from "@/components/Product/Product.module.scss";
 import { ProductType } from "@/types/ProductType";
 
 interface IProps {
