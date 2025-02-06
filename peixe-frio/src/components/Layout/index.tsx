@@ -1,7 +1,7 @@
-import styles from "@/components/Layout/Layout.module.scss";
-import Header from "@/components/Header/index";
-import Footer from "@/components/Footer/index"
-import { JSX } from "react";
+import styles from "@/components/Layout/";
+import Header from "../Header/";
+import Footer from "../Footer/"
+import JSX from "react";
 
 interface IProps {
     children: JSX.Element;
