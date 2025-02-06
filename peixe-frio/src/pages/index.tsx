@@ -18,6 +18,8 @@ export default function Home({ items }: IProps) {
     description: '',
     price: 0,
     image: 'string',
+    quantity: 0,
+    stockQuantity: 0
   });
 
   function hendleSelectProduct(product: ProductType): void {
@@ -51,7 +53,7 @@ export default function Home({ items }: IProps) {
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch("http://localhost:8080/products");
+  const response = await fetch("https://desafio-programar-com-voce-api.onrender.com/products");
   const data = await response.json()
 
   const items = Array.isArray(data.items) ? [...data.items] : [];

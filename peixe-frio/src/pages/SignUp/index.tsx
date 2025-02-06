@@ -19,7 +19,7 @@ export default function SignUp() {
 
         try {
 
-            const response = await fetch("http://localhost:8080/register", {
+            const response = await fetch("https://desafio-programar-com-voce-api.onrender.com/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

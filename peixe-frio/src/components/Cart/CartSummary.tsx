@@ -30,7 +30,7 @@ const CartSummary = () => {
 
         try {
 
-            const verifyUserResponse = await fetch("http://localhost:8080/verifyUser", {
+            const verifyUserResponse = await fetch("https://desafio-programar-com-voce-api.onrender.com/verifyUser", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const CartSummary = () => {
             }))
 
 
-            const finalizePurchaseResponse = await fetch("http://localhost:8080/finalizePurchase", {
+            const finalizePurchaseResponse = await fetch("https://desafio-programar-com-voce-api.onrender.com/finalizePurchase", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
