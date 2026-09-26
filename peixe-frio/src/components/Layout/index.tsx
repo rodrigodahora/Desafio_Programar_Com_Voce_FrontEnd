@@ -1,6 +1,6 @@
 import styles from "../Layout/Layout.module.scss";
 import Header from "../Header/";
-import Footer from "../Footer/"
+import Footer from "../footer/"
 
 interface IProps {
     children: React.ReactNode;
